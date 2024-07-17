@@ -1,7 +1,15 @@
 const express = require('express')
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 const { uploadImg,addExperience } = require('../Controler/expControler')
+
+
+const imagesDir = path.join(__dirname,'..', 'Images');
+if (!fs.existsSync(imagesDir)) {
+  fs.mkdirSync(imagesDir);
+}
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {

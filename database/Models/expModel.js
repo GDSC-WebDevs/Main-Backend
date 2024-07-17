@@ -59,14 +59,19 @@ const expSchema = new Schema({
         min: [0, "CTC must be a positive number"],
         default: undefined
     },
-    // experience: {
-    //     type: String,
-    // },
+    experience: {
+        type: String,
+    },
     profilepic: {
         type: String
     },
     logo: {
         type: String
+    },
+    level: {
+        type: String,
+        enum: ['easy', 'medium', 'hard'],
+        required: true
     }
 });
 

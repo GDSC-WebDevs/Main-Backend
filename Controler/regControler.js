@@ -3,7 +3,6 @@ const regModel = require('../database/Models/regModel');
 async function register(req, res) {
     try {
         let data = await req.body
-        console.log(data)
         const newreg = await new regModel(data)
         await newreg.save()
         res.json(newreg)
